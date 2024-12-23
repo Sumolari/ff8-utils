@@ -40,6 +40,8 @@ export default function Home() {
     });
   };
 
+  const [isJuctionsTableOpen, setIsJuctionsTableOpen] = useState(true);
+
   const maximumStatValue = filteredSpells
     .map((spell) => magic[spell as keyof typeof magic])
     .reduce(
@@ -87,6 +89,23 @@ export default function Home() {
       </tr>
     ));
 
+  const { junctionsTable, junctionsTableSuffix } = isJuctionsTableOpen
+    ? {
+        junctionsTable: (
+          <table className={styles.root}>
+            <thead>
+              <tr>
+                <th align="right">{t('JuctionsTable.spell')}</th>
+                {headerCells}
+              </tr>
+            </thead>
+            <tbody>{spellRows}</tbody>
+          </table>
+        ),
+        junctionsTableSuffix: '-',
+      }
+    : { junctionsTable: null, junctionsTableSuffix: '+' };
+
   return (
     <>
       <SpellFilter
@@ -96,16 +115,15 @@ export default function Home() {
           setSelectedSpells(newSelectedSpells);
         }}
       />
-      <h2>{t('JuctionsTable.title')}</h2>
-      <table className={styles.root}>
-        <thead>
-          <tr>
-            <th align="right">{t('JuctionsTable.spell')}</th>
-            {headerCells}
-          </tr>
-        </thead>
-        <tbody>{spellRows}</tbody>
-      </table>
+      <h2
+        className={styles.title}
+        onClick={() => {
+          setIsJuctionsTableOpen(!isJuctionsTableOpen);
+        }}
+      >
+        {t('JuctionsTable.title')} [{junctionsTableSuffix}]
+      </h2>
+      {junctionsTable}
     </>
   );
 }

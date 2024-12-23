@@ -12,3 +12,12 @@
     }
   }
 }
+
+.title {
+  cursor: pointer;
+  margin-bottom: 1em;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

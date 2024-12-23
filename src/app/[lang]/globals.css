@@ -55,6 +55,17 @@ a {
   text-decoration: none;
 }
 
+td,
+th {
+  padding: 0.25em;
+}
+
+tr {
+  &:nth-child(2n) {
+    background: var(--background-odd);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

@@ -1,16 +1,5 @@
 .root {
   width: 100%;
-
-  td,
-  th {
-    padding: 0.25em;
-  }
-
-  tr {
-    &:nth-child(2n) {
-      background: var(--background-odd);
-    }
-  }
 }
 
 .title {

@@ -24,10 +24,11 @@ export function SpellFilter({
       return lhsName.localeCompare(rhsName);
     })
     .map((name) => (
-      <label key={name}>
+      <label key={name} className={styles.label}>
         <input
           type="checkbox"
           checked={selectedSpells.has(name)}
+          className={styles.input}
           onChange={() => {
             const newSelection = new Set(selectedSpells);
 

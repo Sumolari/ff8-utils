@@ -1,13 +1,13 @@
 .root {
   margin-bottom: 1rem;
 
-  a {
+  .link {
     &:hover {
       text-decoration: underline;
     }
   }
 
-  a + a {
+  .link + .link {
     padding-left: 0.25em;
   }
 }

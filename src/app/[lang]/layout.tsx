@@ -8,12 +8,13 @@ import LanguageSelector from '@/components/navigation/LanguageSelector';
 
 type Props = {
   children: ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: Omit<Props, 'children'>): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'LocaleLayout' });
 
   return {
@@ -22,10 +23,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function LocaleLayout({
-  children,
-  params: { locale },
-}: Props) {
+export default async function LocaleLayout({ children, params }: Props) {
+  const { locale } = await params;
   const messages = await getMessages();
 
   return (

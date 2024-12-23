@@ -13,7 +13,7 @@ export default function LanguageSelector() {
   const links = Object.entries(availableLocales).map(([locale, name]) => (
     <Link
       href={pathname}
-      className={classname({
+      className={classname(styles.link, {
         [styles.active]: locale === currentLocale,
       })}
       key={locale}

@@ -4,6 +4,7 @@ import { getMessages, getTranslations } from 'next-intl/server';
 import { ReactNode } from 'react';
 import styles from './layout.module.css';
 import './globals.css';
+import LanguageSelector from '@/components/navigation/LanguageSelector';
 
 type Props = {
   children: ReactNode;
@@ -32,6 +33,7 @@ export default async function LocaleLayout({
       <body className={styles.root}>
         <div className={styles.content}>
           <NextIntlClientProvider messages={messages}>
+            <LanguageSelector />
             {children}
           </NextIntlClientProvider>
         </div>

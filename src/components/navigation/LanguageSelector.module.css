@@ -1,0 +1,22 @@
+.root {
+  margin-bottom: 1rem;
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  a + a {
+    padding-left: 0.25em;
+  }
+}
+
+.label {
+  padding-right: 0.25em;
+  font-weight: bold;
+}
+
+.active {
+  text-decoration: underline;
+}

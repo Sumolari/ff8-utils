@@ -1,7 +1,8 @@
 {
   "LocaleLayout": {
     "title": "Final Fantasy VIII Utils",
-    "description": "Utilities to make your Final Fantasy VIII games more enjoyable"
+    "description": "Utilities to make your Final Fantasy VIII games more enjoyable",
+    "languages": "Languages:"
   },
   "JuctionsTable": {
     "spell": "Spell"

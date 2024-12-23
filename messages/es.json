@@ -1,7 +1,8 @@
 {
   "LocaleLayout": {
     "title": "Utilidades para Final Fantasy VIII",
-    "description": "Utilidades para que disfrutes más de tus partidas de Final Fantasy VIII"
+    "description": "Utilidades para que disfrutes más de tus partidas de Final Fantasy VIII",
+    "languages": "Idiomas:"
   },
   "JuctionsTable": {
     "spell": "Magia"

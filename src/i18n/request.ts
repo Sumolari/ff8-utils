@@ -12,8 +12,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const messagesModule = await import(`../../messages/${locale}.json`);
   const messages = messagesModule.default;
 
-  console.log(locale, reqLocale);
-
   return {
     locale,
     messages,

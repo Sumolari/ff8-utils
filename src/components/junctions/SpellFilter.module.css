@@ -1,0 +1,31 @@
+.root {
+  margin-bottom: 1em;
+}
+
+.title {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.fields {
+  columns: 5 auto;
+  gap: 0.25em;
+  margin-top: 1em;
+  padding: 0.25em 0.5em;
+
+  label {
+    cursor: pointer;
+    display: block;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  input {
+    margin-right: 0.25em;
+  }
+}

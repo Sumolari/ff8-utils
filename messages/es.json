@@ -4,7 +4,11 @@
     "description": "Utilidades para que disfrutes más de tus partidas de Final Fantasy VIII",
     "languages": "Idiomas:"
   },
+  "SpellFilter": {
+    "title": "Filtrar magias"
+  },
   "JuctionsTable": {
+    "title": "Enlaces",
     "spell": "Magia"
   },
   "Stats": {

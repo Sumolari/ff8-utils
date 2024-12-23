@@ -4,7 +4,11 @@
     "description": "Utilities to make your Final Fantasy VIII games more enjoyable",
     "languages": "Languages:"
   },
+  "SpellFilter": {
+    "title": "Filter spells"
+  },
   "JuctionsTable": {
+    "title": "Junctions",
     "spell": "Spell"
   },
   "Stats": {

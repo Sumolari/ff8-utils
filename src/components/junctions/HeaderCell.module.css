@@ -1,0 +1,17 @@
+.root {
+  cursor: pointer;
+
+  &:hover {
+    .label {
+      text-decoration: underline;
+    }
+  }
+}
+
+.rootIsSorting {
+  background: var(--background-odd);
+}
+
+.orderIndicator {
+  padding-left: 0.25em;
+}

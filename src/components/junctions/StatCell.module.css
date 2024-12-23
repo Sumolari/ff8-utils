@@ -1,0 +1,17 @@
+.root {
+  position: relative;
+}
+
+.background {
+  bottom: 0;
+  display: block;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+}

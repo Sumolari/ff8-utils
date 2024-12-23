@@ -1,30 +1,36 @@
 import magic from '../../../../data/magic.json';
 import { useTranslations } from 'next-intl';
 import styles from './page.module.css';
+import { ALL_STATS } from '@/models/stat';
+import StatCell from '@/components/junctions/StatCell';
 
 export default function Home() {
   const t = useTranslations();
 
-  const stats = [
-    'hp',
-    'str',
-    'vit',
-    'mag',
-    'spr',
-    'spd',
-    'eva',
-    'hit',
-    'luck',
-  ] as const;
+  const maximumStatValue = Object.values(magic).reduce(
+    (accum, spellStats) =>
+      Object.fromEntries(
+        ALL_STATS.map((stat) => [
+          stat,
+          Math.max(accum[stat], spellStats[stat]),
+        ]),
+      ),
+    Object.fromEntries(ALL_STATS.map((stat) => [stat, 0])),
+  );
 
-  const headerCells = stats.map((stat) => (
+  const headerCells = ALL_STATS.map((stat) => (
     <th key={stat}>{t(`Stats.${stat}`)}</th>
   ));
-  const spellRows = Object.entries(magic).map(([spell, spellStats]) => (
-    <tr key={spell}>
-      <td align="right">{t(`Spells.${spell}`)}</td>
-      {stats.map((stat) => (
-        <td key={stat}>{spellStats[stat]}</td>
+  const spellRows = Object.entries(magic).map(([spellName, spellStats]) => (
+    <tr key={spellName}>
+      <td align="right">{t(`Spells.${spellName}`)}</td>
+      {ALL_STATS.map((stat) => (
+        <StatCell
+          key={stat}
+          spell={spellStats}
+          stat={stat}
+          maxValue={maximumStatValue[stat]}
+        />
       ))}
     </tr>
   ));

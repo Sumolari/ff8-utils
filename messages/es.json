@@ -11,6 +11,10 @@
     "title": "Enlaces",
     "spell": "Magia"
   },
+  "BestJunctionsTable": {
+    "title": "Mejor enlace",
+    "spell": "Magia"
+  },
   "Stats": {
     "hp": "Vitalidad",
     "str": "Fuerza",

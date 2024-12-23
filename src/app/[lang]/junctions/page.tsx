@@ -41,6 +41,7 @@ export default function Home() {
   };
 
   const [isJuctionsTableOpen, setIsJuctionsTableOpen] = useState(true);
+  const [isBestJuctionsTableOpen, setIsBestJuctionsTableOpen] = useState(true);
 
   const maximumStatValue = filteredSpells
     .map((spell) => magic[spell as keyof typeof magic])
@@ -106,6 +107,60 @@ export default function Home() {
       }
     : { junctionsTable: null, junctionsTableSuffix: '+' };
 
+  const bestSpellsSortedByStat = Object.fromEntries(
+    ALL_STATS.map((stat) => [
+      stat,
+      Array.from(filteredSpells).sort(
+        (lhs, rhs) =>
+          magic[rhs as keyof typeof magic][stat] -
+          magic[lhs as keyof typeof magic][stat],
+      ),
+    ]),
+  );
+
+  const bestSpellsRows = filteredSpells.map((_, index) => (
+    <tr key={index}>
+      {ALL_STATS.map((stat) => {
+        const spell = bestSpellsSortedByStat[stat][index];
+
+        return (
+          <>
+            <td>{t(`Spells.${spell}`)}</td>
+            <StatCell
+              key={stat}
+              spell={magic[spell as keyof typeof magic]}
+              stat={stat}
+              maxValue={maximumStatValue[stat]}
+            />
+          </>
+        );
+      })}
+    </tr>
+  ));
+
+  const { bestJunctionsTable, bestJunctionsTableSuffix } =
+    isBestJuctionsTableOpen
+      ? {
+          bestJunctionsTable: (
+            <table className={styles.root}>
+              <thead>
+                <tr>
+                  {ALL_STATS.map((stat) => (
+                    <>
+                      <th key={stat} colSpan={2} align="left">
+                        {t(`Stats.${stat}`)}
+                      </th>
+                    </>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>{bestSpellsRows}</tbody>
+            </table>
+          ),
+          bestJunctionsTableSuffix: '-',
+        }
+      : { bestJunctionsTable: null, bestJunctionsTableSuffix: '+' };
+
   return (
     <>
       <SpellFilter
@@ -124,6 +179,15 @@ export default function Home() {
         {t('JuctionsTable.title')} [{junctionsTableSuffix}]
       </h2>
       {junctionsTable}
+      <h2
+        className={styles.title}
+        onClick={() => {
+          setIsBestJuctionsTableOpen(!isBestJuctionsTableOpen);
+        }}
+      >
+        {t('BestJunctionsTable.title')} [{bestJunctionsTableSuffix}]
+      </h2>
+      {bestJunctionsTable}
     </>
   );
 }

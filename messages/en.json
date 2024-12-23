@@ -11,6 +11,10 @@
     "title": "Junctions",
     "spell": "Spell"
   },
+  "BestJunctionsTable": {
+    "title": "Best junction",
+    "spell": "Spell"
+  },
   "Stats": {
     "hp": "HP",
     "str": "Strength",

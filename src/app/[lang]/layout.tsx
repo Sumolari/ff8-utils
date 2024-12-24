@@ -33,8 +33,10 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Providers>
           <NextIntlClientProvider messages={messages}>
             <TopNavbar />
-            <main className="p-6 w-full relative flex-nowrap items-center justify-between max-w-[1024px]">
-              {children}
+            <main className="flex items-center justify-center w-full">
+              <div className="p-6 w-full relative flex-nowrap items-center justify-between max-w-[1024px]">
+                {children}
+              </div>
             </main>
           </NextIntlClientProvider>
         </Providers>

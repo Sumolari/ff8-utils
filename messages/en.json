@@ -1,11 +1,27 @@
 {
   "LocaleLayout": {
     "title": "Final Fantasy VIII Utils",
-    "description": "Utilities to make your Final Fantasy VIII games more enjoyable",
-    "languages": "Languages:"
+    "description": "Utilities to make your Final Fantasy VIII games more enjoyable"
+  },
+  "LanguageSelector": {
+    "languages": "Language",
+    "currentLanguageHint": "Current language",
+    "supportedLanguagesList": "Pick a language"
+  },
+  "TopNavbar": {
+    "title": { "short": "FF8 Utils", "long": "Final Fantasy VIII Utils" },
+    "items": {
+      "allJunctions": "All junctions",
+      "bestJunctions": "Best junctions"
+    }
   },
   "SpellFilter": {
-    "title": "Filter spells"
+    "title": "Filter spells",
+    "actions": {
+      "selectAll": "All",
+      "disableAll": "None",
+      "close": "Close"
+    }
   },
   "JuctionsTable": {
     "title": "Junctions",
@@ -16,15 +32,15 @@
     "spell": "Spell"
   },
   "Stats": {
-    "hp": "HP",
-    "str": "Strength",
-    "vit": "Vitality",
-    "mag": "Magic",
-    "spr": "Spirit",
-    "spd": "Speed",
-    "eva": "Evasion",
-    "hit": "Hit",
-    "luck": "Luck"
+    "hp": { "full": "HP", "short": "HP" },
+    "str": { "full": "Strength", "short": "STR" },
+    "vit": { "full": "Vitality", "short": "VIT" },
+    "mag": { "full": "Magic", "short": "MAG" },
+    "spr": { "full": "Spirit", "short": "SPR" },
+    "spd": { "full": "Speed", "short": "SPD" },
+    "eva": { "full": "Evasion", "short": "EVA" },
+    "hit": { "full": "Hit", "short": "HIT" },
+    "luck": { "full": "Luck", "short": "LUCK" }
   },
   "Spells": {
     "aero": "Aero",

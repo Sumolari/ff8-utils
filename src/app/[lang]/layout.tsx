@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { ReactNode } from 'react';
-import styles from './layout.module.css';
 import './globals.css';
-import LanguageSelector from '@/components/navigation/LanguageSelector';
+import TopNavbar from '@/components/navigation/TopNavbar';
+import { Providers } from '../providers';
 
 type Props = {
   children: ReactNode;
@@ -28,14 +28,16 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body className={styles.root}>
-        <div className={styles.content}>
+    <html lang={locale} className="dark">
+      <body>
+        <Providers>
           <NextIntlClientProvider messages={messages}>
-            <LanguageSelector />
-            {children}
+            <TopNavbar />
+            <main className="p-6 w-full relative flex-nowrap items-center justify-between max-w-[1024px]">
+              {children}
+            </main>
           </NextIntlClientProvider>
-        </div>
+        </Providers>
       </body>
     </html>
   );

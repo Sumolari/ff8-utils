@@ -1,9 +1,16 @@
 'use client';
 
-import { availableLocales, Link, usePathname } from '@/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
-import classname from 'classnames';
-import styles from './LanguageSelector.module.css';
+import { NavbarItem } from '@nextui-org/navbar';
+import {
+  DropdownItem,
+  DropdownTrigger,
+  Dropdown,
+  DropdownMenu,
+} from '@nextui-org/dropdown';
+import { Button } from '@nextui-org/button';
+import { availableLocales, usePathname, Link } from '@/i18n/routing';
+import { ChevronDown } from '@/components/icons/ChevronDown';
 
 export default function LanguageSelector() {
   const pathname = usePathname();
@@ -11,22 +18,43 @@ export default function LanguageSelector() {
   const currentLocale = useLocale();
 
   const links = Object.entries(availableLocales).map(([locale, name]) => (
-    <Link
-      href={pathname}
-      className={classname(styles.link, {
-        [styles.active]: locale === currentLocale,
-      })}
+    <DropdownItem
       key={locale}
-      locale={locale}
+      description={
+        currentLocale === locale
+          ? t('LanguageSelector.currentLanguageHint')
+          : null
+      }
+      as={Link}
+      href={pathname}
+      {...{ locale }}
     >
       {name}
-    </Link>
+    </DropdownItem>
   ));
 
   return (
-    <nav className={styles.root}>
-      <span className={styles.label}>{t('LocaleLayout.languages')}</span>
-      {links}
-    </nav>
+    <Dropdown>
+      <NavbarItem>
+        <DropdownTrigger>
+          <Button
+            disableRipple
+            endContent={<ChevronDown fill="currentColor" size={16} />}
+            radius="sm"
+            variant="light"
+          >
+            {t('LanguageSelector.languages')}
+          </Button>
+        </DropdownTrigger>
+      </NavbarItem>
+      <DropdownMenu
+        aria-label={t('LanguageSelector.supportedLanguagesList')}
+        itemClasses={{
+          base: 'gap-4',
+        }}
+      >
+        {links}
+      </DropdownMenu>
+    </Dropdown>
   );
 }

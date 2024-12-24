@@ -1,11 +1,30 @@
 {
   "LocaleLayout": {
     "title": "Utilidades para Final Fantasy VIII",
-    "description": "Utilidades para que disfrutes más de tus partidas de Final Fantasy VIII",
-    "languages": "Idiomas:"
+    "description": "Utilidades para que disfrutes más de tus partidas de Final Fantasy VIII"
+  },
+  "LanguageSelector": {
+    "languages": "Idioma",
+    "currentLanguageHint": "Idioma actual",
+    "supportedLanguagesList": "Escoge un idioma"
+  },
+  "TopNavbar": {
+    "title": {
+      "short": "Utilidades FF8",
+      "long": "Utilidades para Final Fantasy VIII"
+    },
+    "items": {
+      "allJunctions": "Todos los enlaces",
+      "bestJunctions": "Mejores enlaces"
+    }
   },
   "SpellFilter": {
-    "title": "Filtrar magias"
+    "title": "Filtrar magias",
+    "actions": {
+      "selectAll": "Todas",
+      "disableAll": "Ninguna",
+      "close": "Cerrar"
+    }
   },
   "JuctionsTable": {
     "title": "Enlaces",
@@ -16,15 +35,15 @@
     "spell": "Magia"
   },
   "Stats": {
-    "hp": "Vitalidad",
-    "str": "Fuerza",
-    "vit": "Resistencia",
-    "mag": "Magia",
-    "spr": "Espíritu",
-    "spd": "Velocidad",
-    "eva": "Evasión",
-    "hit": "Precisión",
-    "luck": "Suerte"
+    "hp": { "full": "Vitalidad", "short": "VIT" },
+    "str": { "full": "Fuerza", "short": "FRZ" },
+    "vit": { "full": "Resistencia", "short": "RST" },
+    "mag": { "full": "Poder mágico", "short": "PM" },
+    "spr": { "full": "Espíritu", "short": "ESP" },
+    "spd": { "full": "Rapidez", "short": "RAP" },
+    "eva": { "full": "Evasión", "short": "EVS" },
+    "hit": { "full": "Puntería", "short": "PNT" },
+    "luck": { "full": "Suerte", "short": "SUE" }
   },
   "Spells": {
     "aero": "Aero",

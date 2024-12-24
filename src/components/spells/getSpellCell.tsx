@@ -26,7 +26,7 @@ export const getSpellCell = ({
     }
     default: {
       const body = showName ? (
-        <span className="mr-auto pr-6">{name}</span>
+        <span className="mr-auto pr-6">{t(`Spells.${name}`)}</span>
       ) : null;
 
       return (

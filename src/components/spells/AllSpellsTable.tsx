@@ -28,6 +28,7 @@ export default function AllSpellsTable() {
   });
 
   const sortedItems = useSortedSpellSelection({
+    disallowedSpells: new Set(),
     sortDescriptor,
     t,
   });

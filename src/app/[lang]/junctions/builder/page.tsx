@@ -1,17 +1,17 @@
 import { useTranslations } from 'next-intl';
-import SpellFilter from '@/components/spells/SpellFilter';
 import H2 from '@/components/typography/H2';
-import BestSpellsTables from '@/components/spells/BestSpellsTables';
+import JunctionsBuilder from '@/components/spells/JuctionsBuilder';
+import SpellFilter from '@/components/spells/SpellFilter';
 
 export default function Home() {
   const t = useTranslations();
 
   return (
     <>
-      <H2 id="best">{t('BestJunctionsTable.title')}</H2>
+      <H2 id="best">{t('JunctionsBuilder.title')}</H2>
       <SpellFilter className="mb-3" />
       <div className="flex flex-row gap-4 overflow-x-auto">
-        <BestSpellsTables disallowedSpells={new Set()} />
+        <JunctionsBuilder />
       </div>
     </>
   );

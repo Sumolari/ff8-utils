@@ -2,6 +2,7 @@ import { TableCell } from '@nextui-org/react';
 import { Spell, SpellName } from '@/models/spell';
 import { Stat } from '@/models/stat';
 import StatCellBody from './StatCellBody';
+import { ReactNode } from 'react';
 
 export const SPELL_COLUMN_KEY = 'spell' as const;
 
@@ -12,6 +13,7 @@ export const getSpellCell = ({
   showName = false,
   spellStats,
   t,
+  trailingNode,
 }: {
   columnKey: typeof SPELL_COLUMN_KEY | Stat;
   maxStats: Record<Stat, number>;
@@ -19,6 +21,7 @@ export const getSpellCell = ({
   showName?: boolean;
   spellStats: Spell;
   t: (key: string) => string;
+  trailingNode?: ReactNode;
 }) => {
   switch (columnKey) {
     case SPELL_COLUMN_KEY: {
@@ -35,6 +38,7 @@ export const getSpellCell = ({
             columnKey={columnKey}
             maxStats={maxStats}
             spellStats={spellStats}
+            trailingNode={trailingNode}
           >
             {body}
           </StatCellBody>

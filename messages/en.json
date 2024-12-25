@@ -13,10 +13,9 @@
     "items": {
       "junctions": "Junctions",
       "allJunctions": "All junctions",
-      "bestJunctions": "Best junctions"
-    },
-    "open": "Open",
-    "close": "Close"
+      "bestJunctions": "Best junctions",
+      "junctionsBuilder": "Junctions builder"
+    }
   },
   "SpellFilter": {
     "title": "Filter spells",
@@ -31,8 +30,14 @@
     "spell": "Spell"
   },
   "BestJunctionsTable": {
-    "title": "Best junction",
-    "spell": "Spell"
+    "title": "Best junction"
+  },
+  "JunctionsBuilder": {
+    "title": "Junctions builder",
+    "actions": {
+      "junction": "Junction",
+      "release": "Release"
+    }
   },
   "Stats": {
     "hp": { "full": "HP", "short": "HP" },

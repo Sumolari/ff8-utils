@@ -15,11 +15,25 @@ import {
 } from '@/context/SpellSelectionContext';
 import { Stat } from '@/models/stat';
 import { getSpellCell, SPELL_COLUMN_KEY } from './getSpellCell';
+import { SpellName } from '@/models/spell';
+import { ReactNode } from 'react';
 
-export default function BestSpellTable({ stat }: { stat: Stat }) {
+export default function BestSpellTable({
+  disallowedSpells,
+  stat,
+  getTrailingNode,
+}: {
+  disallowedSpells: Set<SpellName>;
+  stat: Stat;
+  getTrailingNode?: (params: {
+    spell: SpellName;
+    columnKey: typeof SPELL_COLUMN_KEY | Stat;
+  }) => ReactNode;
+}) {
   const t = useTranslations();
 
   const sortedItems = useSortedSpellSelection({
+    disallowedSpells,
     sortDescriptor: {
       column: stat,
       direction: 'descending',
@@ -55,6 +69,10 @@ export default function BestSpellTable({ stat }: { stat: Stat }) {
                 showName: true,
                 spellStats: stats,
                 t,
+                trailingNode: getTrailingNode?.({
+                  spell: name,
+                  columnKey: columnKey as typeof SPELL_COLUMN_KEY | Stat,
+                }),
               })
             }
           </TableRow>

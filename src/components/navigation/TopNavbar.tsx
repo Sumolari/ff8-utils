@@ -61,6 +61,13 @@ export default function TopNavbar() {
             >
               {t('TopNavbar.items.bestJunctions')}
             </DropdownItem>
+            <DropdownItem
+              key="/junctions/builder"
+              as={Link}
+              href="/junctions/builder"
+            >
+              {t('TopNavbar.items.junctionsBuilder')}
+            </DropdownItem>
           </DropdownMenu>
         </Dropdown>
 

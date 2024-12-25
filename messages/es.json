@@ -16,10 +16,9 @@
     "items": {
       "junctions": "Enlaces",
       "allJunctions": "Todos los enlaces",
-      "bestJunctions": "Mejores enlaces"
-    },
-    "open": "Abrir",
-    "close": "Cerrar"
+      "bestJunctions": "Mejores enlaces",
+      "junctionsBuilder": "Simulador de enlaces"
+    }
   },
   "SpellFilter": {
     "title": "Filtrar magias",
@@ -34,8 +33,14 @@
     "spell": "Magia"
   },
   "BestJunctionsTable": {
-    "title": "Mejor enlace",
-    "spell": "Magia"
+    "title": "Mejor enlace"
+  },
+  "JunctionsBuilder": {
+    "title": "Simulador de enlaces",
+    "actions": {
+      "junction": "Enlazar",
+      "release": "Quitar"
+    }
   },
   "Stats": {
     "hp": { "full": "Vitalidad", "short": "VIT" },

@@ -60,15 +60,18 @@ export function useMaxStatValueForSpellSelection() {
 }
 
 export function useSortedSpellSelection({
+  disallowedSpells,
   sortDescriptor,
   t,
 }: {
+  disallowedSpells: Set<SpellName>;
   sortDescriptor: SortDescriptor;
   t: (key: string) => string;
 }) {
   const selectedSpells = useSpellSelection();
 
   return Array.from(selectedSpells)
+    .filter((name) => !disallowedSpells.has(name))
     .map((name) => ({
       name,
       stats: magic[name],

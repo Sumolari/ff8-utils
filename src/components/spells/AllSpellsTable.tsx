@@ -16,7 +16,6 @@ import {
 } from '@/context/SpellSelectionContext';
 import { ALL_STATS, Stat } from '@/models/stat';
 import { useState } from 'react';
-import SpellFilter from './SpellFilter';
 
 import { getSpellCell, SPELL_COLUMN_KEY } from './getSpellCell';
 
@@ -56,7 +55,6 @@ export default function AllSpellsTable() {
       removeWrapper
       isStriped
       isHeaderSticky
-      topContent={<SpellFilter />}
       fullWidth={false}
       className="mb-6"
     >

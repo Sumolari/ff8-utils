@@ -1,5 +1,5 @@
-import { permanentRedirect } from 'next/navigation';
+import { permanentRedirect } from '@/i18n/routing';
 
 export async function GET() {
-  permanentRedirect('/en/junctions');
+  permanentRedirect({ href: '/junctions/all', locale: 'en' });
 }

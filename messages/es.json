@@ -14,9 +14,12 @@
       "long": "Utilidades para Final Fantasy VIII"
     },
     "items": {
+      "junctions": "Enlaces",
       "allJunctions": "Todos los enlaces",
       "bestJunctions": "Mejores enlaces"
-    }
+    },
+    "open": "Abrir",
+    "close": "Cerrar"
   },
   "SpellFilter": {
     "title": "Filtrar magias",

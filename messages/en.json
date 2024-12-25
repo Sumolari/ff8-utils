@@ -11,9 +11,12 @@
   "TopNavbar": {
     "title": { "short": "FF8 Utils", "long": "Final Fantasy VIII Utils" },
     "items": {
+      "junctions": "Junctions",
       "allJunctions": "All junctions",
       "bestJunctions": "Best junctions"
-    }
+    },
+    "open": "Open",
+    "close": "Close"
   },
   "SpellFilter": {
     "title": "Filter spells",

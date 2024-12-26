@@ -1,7 +1,7 @@
 'use client';
 
 import { SortDescriptor } from '@nextui-org/react';
-import { SpellName } from '@/models/spell';
+import { Spell, SpellName } from '@/models/spell';
 import {
   ActionDispatch,
   createContext,
@@ -53,7 +53,19 @@ export function useMaxStatValueForSpellSelection() {
 
   const entries = ALL_STATS.map((stat) => [
     stat,
-    spells.reduce((max, spell) => Math.max(max, magic[spell][stat]), 0),
+    spells.reduce((max, spellName) => {
+      const spell = magic[spellName] as Spell;
+
+      return Math.max(
+        max,
+        typeof spell[stat] === 'number'
+          ? spell[stat]
+          : Object.values(spell[stat]).length
+          ? Object.values(spell[stat]).reduce((sum, value) => sum + value, 0) /
+            Object.values(spell[stat]).length
+          : 0,
+      );
+    }, 0),
   ]);
 
   return Object.fromEntries(entries) as Record<Stat, number>;
@@ -74,7 +86,7 @@ export function useSortedSpellSelection({
     .filter((name) => !disallowedSpells.has(name))
     .map((name) => ({
       name,
-      stats: magic[name],
+      stats: magic[name] as Spell,
     }))
     .sort((lhs, rhs) => {
       const direction = sortDescriptor.direction === 'descending' ? -1 : 1;
@@ -83,7 +95,22 @@ export function useSortedSpellSelection({
       if (column in lhs.stats) {
         const lhsValue = lhs.stats[column as Stat];
         const rhsValue = rhs.stats[column as Stat];
-        const diff = lhsValue - rhsValue;
+
+        if (typeof lhsValue === 'number') {
+          const diff = lhsValue - (rhsValue as number);
+          return diff * direction;
+        }
+
+        const lhsSum = Object.values(lhsValue).reduce(
+          (sum, value) => sum + value,
+          0,
+        );
+        const rhsSum = Object.values(rhsValue).reduce(
+          (sum, value) => sum + value,
+          0,
+        );
+
+        const diff = lhsSum - rhsSum;
         return diff * direction;
       }
 

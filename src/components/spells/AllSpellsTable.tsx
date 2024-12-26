@@ -14,7 +14,7 @@ import {
   useMaxStatValueForSpellSelection,
   useSortedSpellSelection,
 } from '@/context/SpellSelectionContext';
-import { ALL_STATS, Stat } from '@/models/stat';
+import { ALL_BASE_STATS, Stat } from '@/models/stat';
 import { useState } from 'react';
 
 import { getSpellCell, SPELL_COLUMN_KEY } from './getSpellCell';
@@ -39,7 +39,7 @@ export default function AllSpellsTable() {
     <TableColumn key={SPELL_COLUMN_KEY} className="uppercase" allowsSorting>
       {t('JuctionsTable.spell')}
     </TableColumn>,
-    ...ALL_STATS.map((stat) => (
+    ...ALL_BASE_STATS.map((stat) => (
       <TableColumn key={stat} className="uppercase" allowsSorting>
         <Tooltip content={t(`Stats.${stat}.full`)} showArrow as="span">
           <span>{t(`Stats.${stat}.short`)}</span>

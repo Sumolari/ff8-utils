@@ -8,7 +8,15 @@
     "spd": 20,
     "eva": 8,
     "hit": 22,
-    "luck": 25
+    "luck": 25,
+    "elemAtk": {
+      "wind": 80
+    },
+    "elemDef": {
+      "wind": 80
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "apocalypse": {
     "hp": 4200,
@@ -19,7 +27,11 @@
     "spd": 30,
     "eva": 12,
     "hit": 30,
-    "luck": 30
+    "luck": 30,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {}
   },
   "aura": {
     "hp": 3400,
@@ -30,7 +42,13 @@
     "spd": 10,
     "eva": 2,
     "hit": 50,
-    "luck": 40
+    "luck": 40,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {
+      "curse": 200
+    }
   },
   "berserk": {
     "hp": 300,
@@ -41,7 +59,11 @@
     "spd": 5,
     "eva": 2,
     "hit": 4,
-    "luck": 3
+    "luck": 3,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": { "berserk": 100 },
+    "stDef": { "berserk": 100 }
   },
   "bio": {
     "hp": 700,
@@ -52,7 +74,15 @@
     "spd": 5,
     "eva": 2,
     "hit": 4,
-    "luck": 4
+    "luck": 4,
+    "elemAtk": {
+      "poison": 100
+    },
+    "elemDef": {
+      "poison": 150
+    },
+    "stAtk": { "poison": 100 },
+    "stDef": { "poison": 100 }
   },
   "blind": {
     "hp": 100,
@@ -63,7 +93,11 @@
     "spd": 3,
     "eva": 2,
     "hit": 30,
-    "luck": 2
+    "luck": 2,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": { "darkness": 100 },
+    "stDef": { "darkness": 100 }
   },
   "blizzard": {
     "hp": 100,
@@ -74,7 +108,15 @@
     "spd": 8,
     "eva": 3,
     "hit": 10,
-    "luck": 8
+    "luck": 8,
+    "elemAtk": {
+      "ice": 50
+    },
+    "elemDef": {
+      "ice": 50
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "blizzara": {
     "hp": 200,
@@ -85,7 +127,15 @@
     "spd": 12,
     "eva": 4,
     "hit": 16,
-    "luck": 12
+    "luck": 12,
+    "elemAtk": {
+      "ice": 80
+    },
+    "elemDef": {
+      "ice": 80
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "blizzaga": {
     "hp": 1400,
@@ -96,7 +146,15 @@
     "spd": 14,
     "eva": 4,
     "hit": 20,
-    "luck": 14
+    "luck": 14,
+    "elemAtk": {
+      "ice": 100
+    },
+    "elemDef": {
+      "ice": 150
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "break": {
     "hp": 1000,
@@ -107,7 +165,11 @@
     "spd": 10,
     "eva": 4,
     "hit": 10,
-    "luck": 12
+    "luck": 12,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": { "petrify": 100 },
+    "stDef": { "petrify": 100 }
   },
   "cure": {
     "hp": 200,
@@ -118,7 +180,11 @@
     "spd": 3,
     "eva": 2,
     "hit": 2,
-    "luck": 2
+    "luck": 2,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {}
   },
   "cura": {
     "hp": 500,
@@ -129,7 +195,11 @@
     "spd": 4,
     "eva": 2,
     "hit": 3,
-    "luck": 3
+    "luck": 3,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {}
   },
   "curaga": {
     "hp": 2200,
@@ -140,7 +210,11 @@
     "spd": 10,
     "eva": 4,
     "hit": 10,
-    "luck": 10
+    "luck": 10,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {}
   },
   "confuse": {
     "hp": 700,
@@ -151,7 +225,15 @@
     "spd": 18,
     "eva": 4,
     "hit": 8,
-    "luck": 8
+    "luck": 8,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {
+      "confuse": 100
+    },
+    "stDef": {
+      "confuse": 100
+    }
   },
   "silence": {
     "hp": 100,
@@ -162,7 +244,15 @@
     "spd": 4,
     "eva": 2,
     "hit": 3,
-    "luck": 2
+    "luck": 2,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {
+      "silence": 100
+    },
+    "stDef": {
+      "silence": 100
+    }
   },
   "death": {
     "hp": 1800,
@@ -173,7 +263,11 @@
     "spd": 10,
     "eva": 4,
     "hit": 10,
-    "luck": 38
+    "luck": 38,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": { "death": 100 },
+    "stDef": { "death": 100 }
   },
   "demi": {
     "hp": 1600,
@@ -184,7 +278,11 @@
     "spd": 12,
     "eva": 4,
     "hit": 14,
-    "luck": 10
+    "luck": 10,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {}
   },
   "dispel": {
     "hp": 1000,
@@ -195,7 +293,13 @@
     "spd": 8,
     "eva": 4,
     "hit": 8,
-    "luck": 14
+    "luck": 14,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {
+      "drain": 100
+    }
   },
   "double": {
     "hp": 200,
@@ -206,7 +310,11 @@
     "spd": 10,
     "eva": 4,
     "hit": 40,
-    "luck": 2
+    "luck": 2,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {}
   },
   "drain": {
     "hp": 400,
@@ -217,7 +325,11 @@
     "spd": 10,
     "eva": 4,
     "hit": 40,
-    "luck": 2
+    "luck": 2,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": { "drain": 100 },
+    "stDef": { "drain": 100 }
   },
   "esuna": {
     "hp": 500,
@@ -228,7 +340,22 @@
     "spd": 3,
     "eva": 2,
     "hit": 3,
-    "luck": 10
+    "luck": 10,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {
+      "berserk": 20,
+      "confuse": 20,
+      "curse": 20,
+      "darkness": 20,
+      "petrify": 20,
+      "poison": 20,
+      "silence": 20,
+      "sleep": 20,
+      "slow": 20,
+      "stop": 20
+    }
   },
   "fire": {
     "hp": 100,
@@ -239,7 +366,15 @@
     "spd": 8,
     "eva": 3,
     "hit": 10,
-    "luck": 8
+    "luck": 8,
+    "elemAtk": {
+      "fire": 50
+    },
+    "elemDef": {
+      "fire": 50
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "fira": {
     "hp": 200,
@@ -250,7 +385,15 @@
     "spd": 12,
     "eva": 4,
     "hit": 16,
-    "luck": 12
+    "luck": 12,
+    "elemAtk": {
+      "fire": 80
+    },
+    "elemDef": {
+      "fire": 80
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "firaga": {
     "hp": 1400,
@@ -261,7 +404,15 @@
     "spd": 14,
     "eva": 4,
     "hit": 20,
-    "luck": 14
+    "luck": 14,
+    "elemAtk": {
+      "fire": 100
+    },
+    "elemDef": {
+      "fire": 150
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "flare": {
     "hp": 3200,
@@ -272,7 +423,15 @@
     "spd": 12,
     "eva": 4,
     "hit": 26,
-    "luck": 12
+    "luck": 12,
+    "elemAtk": {},
+    "elemDef": {
+      "fire": 80,
+      "ice": 80,
+      "thunder": 80
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "float": {
     "hp": 200,
@@ -283,7 +442,11 @@
     "spd": 16,
     "eva": 4,
     "hit": 12,
-    "luck": 20
+    "luck": 20,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {}
   },
   "full": {
     "hp": 4800,
@@ -294,7 +457,20 @@
     "spd": 8,
     "eva": 4,
     "hit": 8,
-    "luck": 20
+    "luck": 20,
+    "elemAtk": {},
+    "elemDef": {
+      "earth": 40,
+      "fire": 40,
+      "holy": 40,
+      "ice": 40,
+      "poison": 40,
+      "thunder": 40,
+      "water": 40,
+      "wind": 40
+    },
+    "stAtk": {},
+    "stDef": { "death": 40 }
   },
   "haste": {
     "hp": 500,
@@ -305,7 +481,11 @@
     "spd": 50,
     "eva": 6,
     "hit": 10,
-    "luck": 10
+    "luck": 10,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {}
   },
   "holy": {
     "hp": 3800,
@@ -316,7 +496,24 @@
     "spd": 10,
     "eva": 6,
     "hit": 24,
-    "luck": 14
+    "luck": 14,
+    "elemAtk": {
+      "holy": 100
+    },
+    "elemDef": {
+      "holy": 200
+    },
+    "stAtk": {},
+    "stDef": {
+      "death": 40,
+      "drain": 40,
+      "confuse": 40,
+      "zombie": 40,
+      "sleep": 40,
+      "curse": 40,
+      "berserk": 40,
+      "poison": 40
+    }
   },
   "life": {
     "hp": 1200,
@@ -327,7 +524,22 @@
     "spd": 4,
     "eva": 2,
     "hit": 3,
-    "luck": 4
+    "luck": 4,
+    "elemAtk": {},
+    "elemDef": {
+      "earth": 30,
+      "fire": 30,
+      "holy": 30,
+      "ice": 30,
+      "poison": 30,
+      "thunder": 30,
+      "water": 30,
+      "wind": 30
+    },
+    "stAtk": {},
+    "stDef": {
+      "death": 20
+    }
   },
   "meltdown": {
     "hp": 1500,
@@ -338,7 +550,11 @@
     "spd": 3,
     "eva": 2,
     "hit": 12,
-    "luck": 8
+    "luck": 8,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {}
   },
   "meteor": {
     "hp": 4600,
@@ -349,7 +565,14 @@
     "spd": 30,
     "eva": 12,
     "hit": 40,
-    "luck": 22
+    "luck": 22,
+    "elemAtk": {},
+    "elemDef": {
+      "earth": 150,
+      "wind": 150
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "pain": {
     "hp": 2800,
@@ -360,7 +583,11 @@
     "spd": 4,
     "eva": 2,
     "hit": 4,
-    "luck": 40
+    "luck": 40,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": { "poison": 100, "darkness": 100, "silence": 100 },
+    "stDef": { "poison": 100, "darkness": 100, "silence": 100, "curse": 100 }
   },
   "protect": {
     "hp": 400,
@@ -371,7 +598,15 @@
     "spd": 3,
     "eva": 2,
     "hit": 3,
-    "luck": 14
+    "luck": 14,
+    "elemAtk": {},
+    "elemDef": {
+      "fire": 20,
+      "ice": 20,
+      "thunder": 20
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "quake": {
     "hp": 2600,
@@ -382,7 +617,15 @@
     "spd": 7,
     "eva": 3,
     "hit": 30,
-    "luck": 12
+    "luck": 12,
+    "elemAtk": {
+      "earth": 100
+    },
+    "elemDef": {
+      "earth": 200
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "reflect": {
     "hp": 2000,
@@ -393,7 +636,21 @@
     "spd": 10,
     "eva": 4,
     "hit": 8,
-    "luck": 16
+    "luck": 16,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {
+      "poison": 25,
+      "petrify": 25,
+      "darkness": 25,
+      "confuse": 25,
+      "silence": 25,
+      "berserk": 25,
+      "slow": 25,
+      "stop": 25,
+      "sleep": 25
+    }
   },
   "regen": {
     "hp": 2600,
@@ -404,7 +661,11 @@
     "spd": 8,
     "eva": 4,
     "hit": 12,
-    "luck": 8
+    "luck": 8,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {}
   },
   "scan": {
     "hp": 100,
@@ -415,7 +676,11 @@
     "spd": 3,
     "eva": 2,
     "hit": 3,
-    "luck": 3
+    "luck": 3,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {}
   },
   "shell": {
     "hp": 400,
@@ -426,7 +691,20 @@
     "spd": 3,
     "eva": 2,
     "hit": 3,
-    "luck": 14
+    "luck": 14,
+    "elemAtk": {},
+    "elemDef": {
+      "earth": 20,
+      "fire": 20,
+      "holy": 20,
+      "ice": 20,
+      "poison": 20,
+      "thunder": 20,
+      "water": 20,
+      "wind": 20
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "sleep": {
     "hp": 100,
@@ -437,7 +715,11 @@
     "spd": 4,
     "eva": 4,
     "hit": 3,
-    "luck": 2
+    "luck": 2,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {}
   },
   "slow": {
     "hp": 500,
@@ -448,7 +730,11 @@
     "spd": 10,
     "eva": 8,
     "hit": 10,
-    "luck": 10
+    "luck": 10,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": { "slow": 100 },
+    "stDef": { "slow": 100 }
   },
   "stop": {
     "hp": 800,
@@ -459,7 +745,11 @@
     "spd": 48,
     "eva": 10,
     "hit": 20,
-    "luck": 10
+    "luck": 10,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": { "stop": 100 },
+    "stDef": { "stop": 100 }
   },
   "thunder": {
     "hp": 100,
@@ -470,7 +760,15 @@
     "spd": 8,
     "eva": 3,
     "hit": 10,
-    "luck": 8
+    "luck": 8,
+    "elemAtk": {
+      "thunder": 50
+    },
+    "elemDef": {
+      "thunder": 50
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "tundara": {
     "hp": 200,
@@ -481,7 +779,15 @@
     "spd": 12,
     "eva": 4,
     "hit": 16,
-    "luck": 12
+    "luck": 12,
+    "elemAtk": {
+      "thunder": 80
+    },
+    "elemDef": {
+      "thunder": 80
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "thundaga": {
     "hp": 1400,
@@ -492,7 +798,15 @@
     "spd": 14,
     "eva": 4,
     "hit": 20,
-    "luck": 14
+    "luck": 14,
+    "elemAtk": {
+      "thunder": 100
+    },
+    "elemDef": {
+      "thunder": 150
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "triple": {
     "hp": 2400,
@@ -503,7 +817,11 @@
     "spd": 70,
     "eva": 16,
     "hit": 150,
-    "luck": 30
+    "luck": 30,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": {},
+    "stDef": {}
   },
   "tornado": {
     "hp": 3000,
@@ -514,7 +832,15 @@
     "spd": 33,
     "eva": 13,
     "hit": 38,
-    "luck": 14
+    "luck": 14,
+    "elemAtk": {
+      "wind": 100
+    },
+    "elemDef": {
+      "wind": 200
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "ultima": {
     "hp": 6000,
@@ -525,7 +851,20 @@
     "spd": 60,
     "eva": 24,
     "hit": 60,
-    "luck": 64
+    "luck": 64,
+    "elemAtk": {},
+    "elemDef": {
+      "earth": 100,
+      "fire": 100,
+      "holy": 100,
+      "ice": 100,
+      "poison": 100,
+      "thunder": 100,
+      "water": 100,
+      "wind": 100
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "water": {
     "hp": 300,
@@ -536,7 +875,15 @@
     "spd": 12,
     "eva": 4,
     "hit": 18,
-    "luck": 13
+    "luck": 13,
+    "elemAtk": {
+      "water": 100
+    },
+    "elemDef": {
+      "water": 150
+    },
+    "stAtk": {},
+    "stDef": {}
   },
   "zombie": {
     "hp": 800,
@@ -547,6 +894,10 @@
     "spd": 2,
     "eva": 1,
     "hit": 2,
-    "luck": 2
+    "luck": 2,
+    "elemAtk": {},
+    "elemDef": {},
+    "stAtk": { "zombie": 100 },
+    "stDef": { "zombie": 100 }
   }
 }

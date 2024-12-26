@@ -12,6 +12,11 @@
   --color-eva: #bdb67f;
   --color-hit: #6488b3;
   --color-luck: #aa7c7a;
+
+  --color-elemAtk: #ffffff;
+  --color-elemDef: #ffffff;
+  --color-stAtk: #ffffff;
+  --color-stDef: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,6 +30,11 @@
     --color-eva: #494529;
     --color-hit: #0f243e;
     --color-luck: #632523;
+
+    --color-elemAtk: #2d0081;
+    --color-elemDef: #4a0fb8;
+    --color-stAtk: #5e005e;
+    --color-stDef: #8b008b;
   }
 }
 

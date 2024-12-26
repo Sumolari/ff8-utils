@@ -15,7 +15,7 @@ import {
 } from '@/context/SpellSelectionContext';
 import { Stat } from '@/models/stat';
 import { getSpellCell, SPELL_COLUMN_KEY } from './getSpellCell';
-import { SpellName } from '@/models/spell';
+import { isJunctionableToStat, SpellName } from '@/models/spell';
 import { ReactNode } from 'react';
 
 export default function BestSpellTable({
@@ -39,7 +39,7 @@ export default function BestSpellTable({
       direction: 'descending',
     },
     t,
-  });
+  }).filter(({ stats }) => isJunctionableToStat({ spell: stats, stat }));
 
   const maxStats = useMaxStatValueForSpellSelection();
 

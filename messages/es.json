@@ -42,6 +42,9 @@
       "release": "Quitar"
     }
   },
+  "StatCellBody": {
+    "value": { "notAllowed": "N/A" }
+  },
   "Stats": {
     "hp": { "full": "Vitalidad", "short": "VIT" },
     "str": { "full": "Fuerza", "short": "FRZ" },
@@ -51,7 +54,31 @@
     "spd": { "full": "Rapidez", "short": "RAP" },
     "eva": { "full": "Evasión", "short": "EVS" },
     "hit": { "full": "Puntería", "short": "PNT" },
-    "luck": { "full": "Suerte", "short": "SUE" }
+    "luck": { "full": "Suerte", "short": "SUE" },
+    "elemAtk": { "full": "Ataque Elemental", "short": "Ataque ELM" },
+    "elemDef": { "full": "Defensa Elemental", "short": "Defensa ELM" },
+    "stAtk": { "full": "Ataque de Estado", "short": "Ataque EST" },
+    "stDef": { "full": "Defensa de Estado", "short": "Defensa EST" },
+    "earth": "Tierra",
+    "fire": "Fuego",
+    "holy": "Sacro",
+    "ice": "Frío",
+    "poison": "Veneno",
+    "thunder": "Rayo",
+    "water": "Agua",
+    "wind": "Aire",
+    "berserk": "Locura",
+    "confuse": "Confusión",
+    "curse": "Maldición",
+    "darkness": "Ceguera",
+    "death": "Muerte",
+    "drain": "Absorción",
+    "petrify": "Piedra",
+    "silence": "Mudez",
+    "sleep": "Sueño",
+    "slow": "Freno",
+    "stop": "Paro",
+    "zombie": "Zombie"
   },
   "Spells": {
     "aero": "Aero",

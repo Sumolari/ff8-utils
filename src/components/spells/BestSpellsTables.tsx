@@ -1,4 +1,4 @@
-import { ALL_STATS, Stat } from '@/models/stat';
+import { Stat } from '@/models/stat';
 import BestSpellTable from '@/components/spells/BestSpellTable';
 import { SpellName } from '@/models/spell';
 import { SPELL_COLUMN_KEY } from './getSpellCell';
@@ -7,14 +7,16 @@ import { ReactNode } from 'react';
 export default function BestSpellsTables({
   disallowedSpells,
   getTrailingNode,
+  stats,
 }: {
   disallowedSpells: Set<SpellName>;
   getTrailingNode?: (params: {
     spell: SpellName;
     columnKey: typeof SPELL_COLUMN_KEY | Stat;
   }) => ReactNode;
+  stats: Array<Stat>;
 }) {
-  const bestSpellsSection = ALL_STATS.map((stat) => (
+  const bestSpellsSection = stats.map((stat) => (
     <BestSpellTable
       key={stat}
       stat={stat}

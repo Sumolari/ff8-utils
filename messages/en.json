@@ -39,6 +39,9 @@
       "release": "Release"
     }
   },
+  "StatCellBody": {
+    "value": { "notAllowed": "N/A" }
+  },
   "Stats": {
     "hp": { "full": "HP", "short": "HP" },
     "str": { "full": "Strength", "short": "STR" },
@@ -48,7 +51,31 @@
     "spd": { "full": "Speed", "short": "SPD" },
     "eva": { "full": "Evasion", "short": "EVA" },
     "hit": { "full": "Hit", "short": "HIT" },
-    "luck": { "full": "Luck", "short": "LUCK" }
+    "luck": { "full": "Luck", "short": "LUCK" },
+    "elemAtk": { "full": "Elemental Attack", "short": "ELEM-AKT" },
+    "elemDef": { "full": "Elemental Defense", "short": "ELEM-DEF" },
+    "stAtk": { "full": "Status Attack", "short": "ST-AKT" },
+    "stDef": { "full": "Status Defense", "short": "ST-DEF" },
+    "earth": "Earth",
+    "fire": "Fire",
+    "holy": "Holy",
+    "ice": "Ice",
+    "poison": "Poison",
+    "thunder": "Thunder",
+    "water": "Water",
+    "wind": "Wind",
+    "berserk": "Berserk",
+    "confuse": "Confuse",
+    "curse": "Curse",
+    "darkness": "Darkness",
+    "death": "Death",
+    "drain": "Drain",
+    "petrify": "Petrify",
+    "silence": "Silence",
+    "sleep": "Sleep",
+    "slow": "Slow",
+    "stop": "Stop",
+    "zombie": "Zombie"
   },
   "Spells": {
     "aero": "Aero",

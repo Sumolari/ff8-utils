@@ -153,6 +153,17 @@
     "hit": 8,
     "luck": 8
   },
+  "silence": {
+    "hp": 100,
+    "str": 6,
+    "vit": 5,
+    "mag": 12,
+    "spr": 10,
+    "spd": 4,
+    "eva": 2,
+    "hit": 3,
+    "luck": 2
+  },
   "death": {
     "hp": 1800,
     "str": 22,

@@ -40,7 +40,8 @@
     "actions": {
       "junction": "Enlazar",
       "release": "Quitar"
-    }
+    },
+    "immune": "Inmune"
   },
   "StatCellBody": {
     "value": { "notAllowed": "N/A" }

@@ -8,3 +8,14 @@ export enum Element {
   water = 'water',
   wind = 'wind',
 }
+
+export const ALL_ELEMENTS = [
+  Element.earth,
+  Element.fire,
+  Element.holy,
+  Element.ice,
+  Element.poison,
+  Element.thunder,
+  Element.water,
+  Element.wind,
+];

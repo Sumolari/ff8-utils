@@ -12,7 +12,9 @@ import { setRemoving } from '@/utils/Set';
 import SpellPicker from './SpellPicker';
 import StatCellBody from './StatCellBody';
 import magic from '../../../data/magic.json';
-import { Button } from '@nextui-org/react';
+import { Button, Chip, Divider } from '@nextui-org/react';
+import { ALL_ELEMENTS, Element } from '@/models/element';
+import { ALL_STATUS, Status } from '@/models/status';
 
 type JunctionSlot =
   | BaseStat
@@ -27,7 +29,7 @@ type JunctionSlot =
   | 'stDef3'
   | 'stDef4';
 
-const statByJunctionSlot: Record<JunctionSlot, Stat> = {
+const statByJunctionSlot = {
   [BaseStat.eva]: BaseStat.eva,
   [BaseStat.hit]: BaseStat.hit,
   [BaseStat.hp]: BaseStat.hp,
@@ -47,7 +49,7 @@ const statByJunctionSlot: Record<JunctionSlot, Stat> = {
   stDef2: StatusStat.def,
   stDef3: StatusStat.def,
   stDef4: StatusStat.def,
-};
+} satisfies Record<JunctionSlot, Stat>;
 
 const ALL_JUNCTION_SLOTS: Array<JunctionSlot> = [
   BaseStat.eva,
@@ -130,6 +132,52 @@ function JunctionSlot({
   );
 }
 
+function ElementalDefenseSum({
+  element,
+  value,
+}: {
+  element: Element;
+  value: number;
+}) {
+  const t = useTranslations();
+
+  const percentageNode =
+    value >= 100 ? (
+      <Chip color="success">{value - 100}%</Chip>
+    ) : (
+      <Chip>{value}%</Chip>
+    );
+
+  return (
+    <div className="flex flex-row items-center mb-2 break-inside-avoid-column">
+      <span className="mr-auto">{t(`Stats.${element}`)}</span> {percentageNode}
+    </div>
+  );
+}
+
+function StatusDefenseSum({
+  status,
+  value,
+}: {
+  status: Status;
+  value: number;
+}) {
+  const t = useTranslations();
+
+  const percentageNode =
+    value >= 100 ? (
+      <Chip color="success">{t('JunctionsBuilder.immune')}</Chip>
+    ) : (
+      <Chip>{value}%</Chip>
+    );
+
+  return (
+    <div className="flex flex-row items-center mb-2 break-inside-avoid-column">
+      <span className="mr-auto">{t(`Stats.${status}`)}</span> {percentageNode}
+    </div>
+  );
+}
+
 export default function JunctionsBuilder() {
   const selectedSpells = useSpellSelection();
 
@@ -137,6 +185,66 @@ export default function JunctionsBuilder() {
     Object.fromEntries(
       ALL_JUNCTION_SLOTS.map((slot) => [slot, null]),
     ) as Record<JunctionSlot, SpellName | null>,
+  );
+
+  const elementalDefenseJunctionsSum = [
+    'elemDef1' as const,
+    'elemDef2' as const,
+    'elemDef3' as const,
+    'elemDef4' as const,
+  ].reduce<Record<Element, number>>(
+    (accum, slot) =>
+      Object.fromEntries(
+        ALL_ELEMENTS.map((element) => {
+          const spell = spellByJunctionSlot[slot];
+
+          if (!spell) {
+            return [element, accum[element]];
+          }
+
+          const stats = magic[spell][statByJunctionSlot[slot]];
+
+          return [
+            element,
+            accum[element] +
+              (element in stats ? stats[element as keyof typeof stats] : 0),
+          ];
+        }),
+      ) as Record<Element, number>,
+    Object.fromEntries(ALL_ELEMENTS.map((element) => [element, 0])) as Record<
+      Element,
+      number
+    >,
+  );
+
+  const statusDefenseJunctionsSum = [
+    'stDef1' as const,
+    'stDef2' as const,
+    'stDef3' as const,
+    'stDef4' as const,
+  ].reduce<Record<Status, number>>(
+    (accum, slot) =>
+      Object.fromEntries(
+        ALL_STATUS.map((status) => {
+          const spell = spellByJunctionSlot[slot];
+
+          if (!spell) {
+            return [status, accum[status]];
+          }
+
+          const stats = magic[spell][statByJunctionSlot[slot]];
+
+          return [
+            status,
+            accum[status] +
+              (status in stats ? stats[status as keyof typeof stats] : 0),
+          ];
+        }),
+      ) as Record<Status, number>,
+    Object.fromEntries(ALL_STATUS.map((status) => [status, 0])) as Record<
+      Status,
+      number
+    >,
   );
 
   const junctionedSpells = new Set(
@@ -208,16 +316,30 @@ export default function JunctionsBuilder() {
     BaseStat.luck,
   ].map((slot) => getJunctionSlotNode(slot));
 
+  const elementalDefenseNodes = ALL_ELEMENTS.map((element) => (
+    <ElementalDefenseSum
+      key={element}
+      element={element}
+      value={elementalDefenseJunctionsSum[element]}
+    />
+  ));
+
   const elementalStatsJunctions = [
-    ElementalStat.atk as const,
     'elemDef1' as const,
     'elemDef2' as const,
     'elemDef3' as const,
     'elemDef4' as const,
   ].map((slot) => getJunctionSlotNode(slot));
 
+  const statusDefenseNodes = ALL_STATUS.map((status) => (
+    <StatusDefenseSum
+      key={status}
+      status={status}
+      value={statusDefenseJunctionsSum[status]}
+    />
+  ));
+
   const statusStatsJunctions = [
-    StatusStat.atk as const,
     'stDef1' as const,
     'stDef2' as const,
     'stDef3' as const,
@@ -230,9 +352,25 @@ export default function JunctionsBuilder() {
         {getJunctionSlotNode(BaseStat.hp)}
       </div>
       <div className="w-full sm:columns-2">{baseStatsJunctions}</div>
-      <div className="w-full sm:columns-2">
-        {elementalStatsJunctions}
-        {statusStatsJunctions}
+
+      <Divider className="my-4" />
+
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div className="row-span-1 col-span-1">
+          {getJunctionSlotNode(ElementalStat.atk)}
+          <Divider className="my-4" />
+          <div className="columns-2 mt-1 py-2">{elementalDefenseNodes}</div>
+          <Divider className="my-4" />
+          {elementalStatsJunctions}
+        </div>
+
+        <div className="row-span-1 col-span-1">
+          {getJunctionSlotNode(StatusStat.atk)}
+          <Divider className="my-4" />
+          <div className="columns-2 mt-1 py-2">{statusDefenseNodes}</div>
+          <Divider className="my-4" />
+          {statusStatsJunctions}
+        </div>
       </div>
     </div>
   );

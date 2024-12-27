@@ -37,7 +37,8 @@
     "actions": {
       "junction": "Junction",
       "release": "Release"
-    }
+    },
+    "immune": "Immune"
   },
   "StatCellBody": {
     "value": { "notAllowed": "N/A" }

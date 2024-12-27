@@ -13,3 +13,19 @@ export enum Status {
   stop = 'stop',
   zombie = 'zombie',
 }
+
+export const ALL_STATUS = [
+  Status.berserk,
+  Status.confuse,
+  Status.curse,
+  Status.darkness,
+  Status.death,
+  Status.drain,
+  Status.petrify,
+  Status.poison,
+  Status.silence,
+  Status.sleep,
+  Status.slow,
+  Status.stop,
+  Status.zombie,
+];

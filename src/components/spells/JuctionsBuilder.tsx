@@ -12,7 +12,7 @@ import { setRemoving } from '@/utils/Set';
 import SpellPicker from './SpellPicker';
 import StatCellBody from './StatCellBody';
 import magic from '../../../data/magic.json';
-import { Button, Chip, Divider } from '@nextui-org/react';
+import { Button, Chip, Divider, Tooltip } from '@nextui-org/react';
 import { ALL_ELEMENTS, Element } from '@/models/element';
 import { ALL_STATUS, Status } from '@/models/status';
 
@@ -97,9 +97,11 @@ function JunctionSlot({
       spellStats={magic[junctionedSpell]}
       key={slot}
       leadingNode={
-        <span className="mr-3 whitespace-nowrap">
-          {t(`Stats.${stat}.short`)}
-        </span>
+        <Tooltip content={t(`Stats.${stat}.full`)} showArrow as="span">
+          <span className="mr-3 whitespace-nowrap w-20">
+            {t(`Stats.${stat}.short`)}
+          </span>
+        </Tooltip>
       }
       trailingNode={
         <Button
@@ -119,7 +121,11 @@ function JunctionSlot({
     </StatCellBody>
   ) : (
     <div key={slot} className="flex flex-row items-center">
-      <span className="mr-auto">{t(`Stats.${stat}.short`)}</span>
+      <Tooltip content={t(`Stats.${stat}.full`)} showArrow as="span">
+        <span className="mr-auto whitespace-nowrap w-20">
+          {t(`Stats.${stat}.short`)}
+        </span>
+      </Tooltip>
       <SpellPicker
         disallowedSpells={disallowedSpells}
         selectedSpell={junctionedSpell}

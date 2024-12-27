@@ -72,6 +72,19 @@ export default function TopNavbar() {
         </Dropdown>
 
         <LanguageSelector />
+
+        <NavbarItem>
+          <Button
+            href="https://github.com/Sumolari/ff8-utils"
+            disableRipple
+            radius="sm"
+            variant="light"
+            as="a"
+            target="_blank"
+          >
+            {t('TopNavbar.items.sourceCode')}
+          </Button>
+        </NavbarItem>
       </NavbarContent>
     </Navbar>
   );

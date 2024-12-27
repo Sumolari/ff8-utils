@@ -14,7 +14,8 @@
       "junctions": "Junctions",
       "allJunctions": "All junctions",
       "bestJunctions": "Best junctions",
-      "junctionsBuilder": "Junctions builder"
+      "junctionsBuilder": "Junctions builder",
+      "sourceCode": "Github"
     }
   },
   "SpellFilter": {

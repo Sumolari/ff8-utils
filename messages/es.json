@@ -17,7 +17,8 @@
       "junctions": "Enlaces",
       "allJunctions": "Todos los enlaces",
       "bestJunctions": "Mejores enlaces",
-      "junctionsBuilder": "Simulador de enlaces"
+      "junctionsBuilder": "Simulador de enlaces",
+      "sourceCode": "Github"
     }
   },
   "SpellFilter": {

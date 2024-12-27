@@ -1,6 +1,7 @@
 export enum Status {
   berserk = 'berserk',
   confuse = 'confuse',
+  curse = 'curse',
   darkness = 'darkness',
   death = 'death',
   drain = 'drain',

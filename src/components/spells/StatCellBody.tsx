@@ -8,12 +8,14 @@ function NumericValueBody({
   maxStats,
   stat,
   children,
+  leadingNode,
   trailingNode,
 }: {
   value: number;
   maxStats: Record<Stat, number>;
   stat: Stat;
   children?: ReactNode;
+  leadingNode?: ReactNode;
   trailingNode?: ReactNode;
 }) {
   const width = (value / maxStats[stat]) * 100;
@@ -21,9 +23,10 @@ function NumericValueBody({
   return (
     <OptionalWrapper
       className="flex flex-row items-center"
+      leadingNode={leadingNode}
       trailingNode={trailingNode}
     >
-      <div className="flex flex-row relative grow-1 w-full items-center">
+      <div className="flex flex-row relative grow-1 w-full items-center break-inside-avoid-column">
         <div
           className="inset-y-0 absolute z-10 max-w-full rounded-md"
           style={{
@@ -44,12 +47,14 @@ function DictionaryBody({
   maxStats,
   stat,
   children,
+  leadingNode,
   trailingNode,
 }: {
   dictionary: Record<string, number>;
   maxStats: Record<Stat, number>;
   stat: Stat;
   children?: ReactNode;
+  leadingNode?: ReactNode;
   trailingNode?: ReactNode;
 }) {
   const t = useTranslations();
@@ -66,9 +71,10 @@ function DictionaryBody({
   const width = (value / maxStats[stat]) * 100;
 
   return (
-    <>
+    <div className="break-inside-avoid-column">
       <OptionalWrapper
         className="flex flex-row items-center"
+        leadingNode={leadingNode}
         trailingNode={trailingNode}
       >
         <div className="flex flex-col w-full">
@@ -86,22 +92,25 @@ function DictionaryBody({
           </div>
         </div>
       </OptionalWrapper>
-      <p className="px-1 pt-2">{translatedKeys}</p>
-    </>
+      <p className="px-1 pb-3">{translatedKeys}</p>
+    </div>
   );
 }
 
 function OptionalWrapper({
   children,
   className,
+  leadingNode,
   trailingNode,
 }: {
   children: ReactNode;
   className: string;
+  leadingNode?: ReactNode;
   trailingNode?: ReactNode;
 }) {
-  return trailingNode ? (
+  return leadingNode || trailingNode ? (
     <div className={className}>
+      {leadingNode}
       {children}
       {trailingNode}
     </div>
@@ -115,12 +124,14 @@ export default function StatCellBody({
   maxStats,
   spellStats,
   children,
+  leadingNode,
   trailingNode,
 }: {
   columnKey: Stat;
   maxStats: Record<Stat, number>;
   spellStats: Spell;
   children?: ReactNode;
+  leadingNode?: ReactNode;
   trailingNode?: ReactNode;
 }) {
   const value = spellStats[columnKey];
@@ -130,6 +141,7 @@ export default function StatCellBody({
       maxStats={maxStats}
       stat={columnKey}
       value={value}
+      leadingNode={leadingNode}
       trailingNode={trailingNode}
     >
       {children}
@@ -139,6 +151,7 @@ export default function StatCellBody({
       maxStats={maxStats}
       stat={columnKey}
       dictionary={value}
+      leadingNode={leadingNode}
       trailingNode={trailingNode}
     >
       {children}

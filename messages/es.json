@@ -45,6 +45,11 @@
   "StatCellBody": {
     "value": { "notAllowed": "N/A" }
   },
+  "SpellPicker": {
+    "pickSpell": "Elige una magia",
+    "removeJunction": "Quitar enlace",
+    "pick": "Enlazar"
+  },
   "Stats": {
     "hp": { "full": "Vitalidad", "short": "VIT" },
     "str": { "full": "Fuerza", "short": "FRZ" },

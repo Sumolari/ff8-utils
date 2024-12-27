@@ -42,6 +42,11 @@
   "StatCellBody": {
     "value": { "notAllowed": "N/A" }
   },
+  "SpellPicker": {
+    "pickSpell": "Pick spell",
+    "removeJunction": "Remove junction",
+    "pick": "Pick spell"
+  },
   "Stats": {
     "hp": { "full": "HP", "short": "HP" },
     "str": { "full": "Strength", "short": "STR" },
